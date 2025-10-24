@@ -1319,7 +1319,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_2c627"]
 sources/0 = SubResource("TileSetAtlasSource_nduwo")
 
-[node name="game map" type="Node2D"]
+[node name="game map(1)" type="Node2D"]
 script = ExtResource("1_kemja")
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
