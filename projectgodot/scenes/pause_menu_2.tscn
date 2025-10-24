@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2kpk032i22h3"]
+
+[ext_resource type="Script" uid="uid://b3pkhui8lumae" path="res://scripts/pause_menu_2.gd" id="1_d51q3"]
+[ext_resource type="Texture2D" uid="uid://bpnptib447tn2" path="res://assets/background/space background.webp" id="2_n1pom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgths"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="pause menu2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d51q3")
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 328)
+scale = Vector2(0.9, 0.968056)
+texture = ExtResource("2_n1pom")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -124.0
+offset_right = 160.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -116.0
+offset_right = 152.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.572549, 0.294118, 0.976471, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -92.0
+offset_right = 149.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "menu = esc
+bouger = flèches
+
+but:
+prends tous les cadeaux dans la pièce !!"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 63.0
+offset_right = 36.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="retour" type="Button" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.290196, 0.176471, 0.45098, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgths")
+text = "retour
+"
+
+[connection signal="pressed" from="MarginContainer/retour" to="." method="_on_retour_pressed"]
