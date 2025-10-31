@@ -22,7 +22,7 @@ func _physics_process(delta):
 		# idle animation
 		anim.play("idle")
 	else:
-		# choose the direction animation
+		# choose the direction anim==++ation
 		if abs(input_vector.x) > abs(input_vector.y):
 			if input_vector.x > 0:
 				anim.play("right")
