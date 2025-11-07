@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dxbn3pxck05xu"]
+[gd_scene load_steps=7 format=4 uid="uid://dxbn3pxck05xu"]
 
 [ext_resource type="Texture2D" uid="uid://cj4857rfb3dot" path="res://assets/spritesheets/Tilesets - Vast Forest.png" id="1_bp483"]
 [ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="2_0441p"]
 [ext_resource type="AudioStream" uid="uid://dvbge2nsxyck0" path="res://assets/audio/OMORI OST - 006 Let's Get Together Now!.mp3" id="3_ti2pu"]
+[ext_resource type="PackedScene" uid="uid://vsb7va1quinu" path="res://scenes/powerup_2.tscn" id="4_jpnb7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bp483"]
 texture = ExtResource("1_bp483")
@@ -239,3 +240,60 @@ polygon = PackedVector2Array(712, 336, 704, 352, 704, 376, 712, 384, 704, 392, 7
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-672, 352)
 polygon = PackedVector2Array(712, 336, 704, 352, 704, 376, 712, 384, 704, 392, 736, 392, 728, 384, 736, 368, 736, 352, 728, 336)
+
+[node name="powerup2" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(592, 712)
+
+[node name="powerup3" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(296, 560)
+
+[node name="powerup4" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(120, 624)
+
+[node name="powerup5" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(-48, 672)
+
+[node name="powerup6" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(744, 944)
+
+[node name="powerup7" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(1088, 880)
+
+[node name="powerup8" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(992, 776)
+
+[node name="powerup9" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(1016, 496)
+
+[node name="powerup10" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(800, 520)
+
+[node name="powerup11" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(424, 656)
+
+[node name="powerup12" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(816, 432)
+
+[node name="powerup13" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(520, 504)
+
+[node name="powerup14" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(672, 328)
+
+[node name="powerup15" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(480, 336)
+
+[node name="powerup16" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(576, 224)
+
+[node name="powerup17" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(576, 144)
+
+[node name="powerup18" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(416, 136)
+
+[node name="powerup19" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(752, 856)
+
+[node name="powerup20" parent="." instance=ExtResource("4_jpnb7")]
+position = Vector2(384, 936)
