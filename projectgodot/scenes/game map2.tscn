@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dxbn3pxck05xu"]
+[gd_scene load_steps=8 format=4 uid="uid://dxbn3pxck05xu"]
 
 [ext_resource type="Texture2D" uid="uid://cj4857rfb3dot" path="res://assets/spritesheets/Tilesets - Vast Forest.png" id="1_bp483"]
 [ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="2_0441p"]
 [ext_resource type="AudioStream" uid="uid://dvbge2nsxyck0" path="res://assets/audio/OMORI OST - 006 Let's Get Together Now!.mp3" id="3_ti2pu"]
 [ext_resource type="PackedScene" uid="uid://vsb7va1quinu" path="res://scenes/powerup_2.tscn" id="4_jpnb7"]
+[ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="5_ipxgo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bp483"]
 texture = ExtResource("1_bp483")
@@ -297,3 +298,14 @@ position = Vector2(752, 856)
 
 [node name="powerup20" parent="." instance=ExtResource("4_jpnb7")]
 position = Vector2(384, 936)
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_ipxgo")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 568.0
+offset_top = 80.0
+offset_right = 608.0
+offset_bottom = 103.0
+metadata/_edit_use_anchors_ = true

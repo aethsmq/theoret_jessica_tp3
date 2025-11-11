@@ -1388,6 +1388,7 @@ autoplay = true
 script = ExtResource("6_yeq10")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(376, 400, 376, 464, 472, 464, 472, 400)
@@ -1457,3 +1458,4 @@ offset_left = 832.0
 offset_top = 152.0
 offset_right = 872.0
 offset_bottom = 175.0
+metadata/_edit_use_anchors_ = true
