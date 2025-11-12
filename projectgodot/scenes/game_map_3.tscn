@@ -494,15 +494,32 @@ position = Vector2(624, 88)
 position = Vector2(696, 608)
 
 [node name="powerup18" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(384, 600)
+position = Vector2(296, 544)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_ocqs2")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 621.0
-offset_top = -368.0
-offset_right = 661.0
-offset_bottom = -345.0
+offset_left = 466.0
+offset_top = -297.0
+offset_right = 506.0
+offset_bottom = -274.0
 metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(560, 776, 656, 776, 656, 624, 872, 624, 872, 56, 656, 56, 656, -240, 736, -240, 736, -24, 896, -24, 896, 648, 672, 648, 672, 800, 408, 800, 408, 640, 200, 640, 200, -24, 352, -24, 352, -184, 352, -240, 424, -240, 424, 56, 208, 56, 208, 624, 424, 624, 424, 776)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(520, 448, 520, 400, 488, 400, 488, 384, 456, 384, 456, 368, 456, 352, 424, 352, 424, 304, 440, 304, 440, 320, 456, 320, 456, 296, 496, 296, 496, 344, 592, 344, 592, 296, 624, 296, 624, 320, 648, 320, 648, 304, 656, 304, 656, 368, 624, 368, 624, 400, 616, 384, 592, 384, 592, 400, 560, 400, 560, 448, 584, 448, 584, 432, 600, 448, 616, 448, 616, 432, 648, 432, 648, 400, 672, 400, 672, 280, 640, 280, 640, 248, 440, 248, 440, 280, 408, 280, 408, 400, 440, 400, 440, 432, 464, 432, 464, 448)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(568, 152, 608, 152, 608, 168, 664, 168, 664, 152, 712, 152, 712, 184, 752, 184, 744, 216, 784, 216, 784, 472, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 568, 520, 568, 560, 624, 560, 624, 576, 648, 576, 648, 560, 664, 552, 664, 584, 728, 584, 728, 552, 752, 560, 752, 576, 768, 576, 768, 528, 800, 528, 800, 144, 768, 144, 768, 104, 568, 128)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1120, 8)
+rotation = 3.14101
+scale = Vector2(1.04432, -0.993635)
+polygon = PackedVector2Array(574.615, 144.569, 612.917, 144.545, 612.926, 160.648, 674.21, 160.61, 674.201, 144.508, 720.163, 144.479, 720.181, 176.684, 750.823, 176.666, 743.181, 208.875, 781.487, 216.903, 781.626, 466.492, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 574.826, 522.977, 574.844, 555.182, 628.467, 555.149, 624, 576, 648, 576, 651.448, 555.135, 674.429, 555.121, 674.443, 579.275, 728.066, 579.242, 728.053, 555.088, 752, 560, 751.043, 571.177, 774.024, 571.162, 774.002, 530.906, 800, 528, 800, 144, 768, 144, 768, 104, 574.601, 120.415)

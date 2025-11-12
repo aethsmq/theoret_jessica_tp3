@@ -290,22 +290,13 @@ position = Vector2(576, 224)
 [node name="powerup17" parent="." instance=ExtResource("4_jpnb7")]
 position = Vector2(576, 144)
 
-[node name="powerup18" parent="." instance=ExtResource("4_jpnb7")]
-position = Vector2(416, 136)
-
-[node name="powerup19" parent="." instance=ExtResource("4_jpnb7")]
-position = Vector2(752, 856)
-
-[node name="powerup20" parent="." instance=ExtResource("4_jpnb7")]
-position = Vector2(384, 936)
-
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_ipxgo")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 568.0
-offset_top = 80.0
-offset_right = 608.0
-offset_bottom = 103.0
+offset_left = 488.0
+offset_top = 88.0
+offset_right = 528.0
+offset_bottom = 111.0
 metadata/_edit_use_anchors_ = true
