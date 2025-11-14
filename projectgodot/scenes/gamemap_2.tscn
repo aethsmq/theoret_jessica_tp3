@@ -198,7 +198,6 @@ script = ExtResource("2_4dy6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/Sprite2D/Area2D2"]
 position = Vector2(0, -3.58624)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wjuch")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMapLayer"]
