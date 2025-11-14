@@ -214,7 +214,7 @@ position = Vector2(504, 584)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 offset = Vector2(1, 1)
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4dy6r")

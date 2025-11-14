@@ -94,6 +94,7 @@ size_flags_vertical = 4
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.290196, 0.176471, 0.45098, 1)
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xgths")
 text = "retour
