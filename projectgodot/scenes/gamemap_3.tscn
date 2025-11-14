@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=4 uid="uid://cnjss4sgy8nub"]
+[gd_scene load_steps=15 format=4 uid="uid://cnjss4sgy8nub"]
 
-[ext_resource type="Texture2D" uid="uid://d1pjc2wvhabxs" path="res://assets/spritesheets/Tilesets - Sweetheart's Castle.png" id="1_xnfup"]
-[ext_resource type="Texture2D" uid="uid://drcmdbw3x3uxx" path="res://assets/spritesheets/Omori - Tilesets - Sprout Mole Town.png" id="2_nf14i"]
-[ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="2_oxhug"]
-[ext_resource type="AudioStream" uid="uid://dal013e0tb2ag" path="res://assets/audio/OMORI OST - Stationary Rose.mp3" id="3_cvhg6"]
-[ext_resource type="PackedScene" uid="uid://dpfqf08u8cq30" path="res://scenes/powerup_3.tscn" id="4_ivib3"]
-[ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="6_ocqs2"]
+[ext_resource type="Texture2D" uid="uid://d1pjc2wvhabxs" path="res://assets/spritesheets/Tilesets - Sweetheart's Castle.png" id="1_83jyj"]
+[ext_resource type="Texture2D" uid="uid://drcmdbw3x3uxx" path="res://assets/spritesheets/Omori - Tilesets - Sprout Mole Town.png" id="2_0q8ka"]
+[ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="3_cg0w5"]
+[ext_resource type="AudioStream" uid="uid://dal013e0tb2ag" path="res://assets/audio/OMORI OST - Stationary Rose.mp3" id="4_dys00"]
+[ext_resource type="PackedScene" uid="uid://dpfqf08u8cq30" path="res://scenes/powerup_3.tscn" id="5_vl2df"]
+[ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="6_m1vmw"]
+[ext_resource type="PackedScene" uid="uid://dyl6qq88a2ena" path="res://scenes/gate.tscn" id="7_0q8ka"]
+[ext_resource type="PackedScene" uid="uid://c2e0ointnufcq" path="res://scenes/flower_gate.tscn" id="8_cg0w5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnfup"]
-texture = ExtResource("1_xnfup")
+texture = ExtResource("1_83jyj")
 texture_region_size = Vector2i(32, 32)
 45:38/0 = 0
 47:38/0 = 0
@@ -179,7 +181,7 @@ tile_size = Vector2i(31, 31)
 sources/0 = SubResource("TileSetAtlasSource_xnfup")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocqs2"]
-texture = ExtResource("2_nf14i")
+texture = ExtResource("2_0q8ka")
 texture_region_size = Vector2i(32, 32)
 5:26/0 = 0
 6:26/0 = 0
@@ -203,7 +205,7 @@ tile_size = Vector2i(31, 31)
 sources/0 = SubResource("TileSetAtlasSource_ocqs2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxhug"]
-texture = ExtResource("1_xnfup")
+texture = ExtResource("1_83jyj")
 texture_region_size = Vector2i(32, 32)
 22:11/size_in_atlas = Vector2i(1, 2)
 22:11/0 = 0
@@ -426,18 +428,18 @@ tile_map_data = PackedByteArray("AAAZAAQAAAAwACAAAAAZAAUAAAAwACEAAAAZAAYAAAAwACI
 tile_set = SubResource("TileSet_oxhug")
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAQAAkAAAAUABYAAAATAAkAAAApACQAAAAPAAkAAAAoACQAAAAPAAgAAAAoACMAAAAPAAcAAAAoACIAAAATAAgAAAApACMAAAATAAcAAAApACIAAAAOAAkAAAARABYAAAAUAAkAAAARABYAAAATAA0AAAARABYAAAAPAA0AAAARABYAAAAUAAQAAAADABkAAAAOAAQAAAADABkAAAAMAA4AAAARABgAAAAWAA4AAAASABgAAAAWABIAAAAoACYAAAAMABIAAAAoACYAAAAUABEAAAATABgAAAAOABEAAAATABgAAAAKABEAAAATABgAAAAYABEAAAATABgAAAASAA0AAAAWAAsAAAAQAA0AAAAWAAsAAAARAO7/AAAXABkAAAAYAPb/AAARABYAAAAKAPb/AAARABYAAAAYAPn/AAATABgAAAAKAPn/AAATABgAAAAYAP3/AAARABYAAAAKAP3/AAARABYAAAATAPn/AAApACIAAAATAPr/AAApACMAAAATAPv/AAApACQAAAAPAPn/AAApACIAAAAPAPr/AAApACMAAAAPAPv/AAApACQAAAATAP//AAApACIAAAATAAAAAAApACMAAAATAAEAAAApACQAAAAPAP//AAApACIAAAAPAAAAAAApACMAAAAPAAEAAAApACQAAAARAAkAAAAUAA4AAAA=")
+tile_map_data = PackedByteArray("AAAQAAkAAAAUABYAAAATAAkAAAApACQAAAAPAAkAAAAoACQAAAAPAAgAAAAoACMAAAAPAAcAAAAoACIAAAATAAgAAAApACMAAAATAAcAAAApACIAAAAOAAkAAAARABYAAAAUAAkAAAARABYAAAATAA0AAAARABYAAAAPAA0AAAARABYAAAAUAAQAAAADABkAAAAOAAQAAAADABkAAAAMAA4AAAARABgAAAAWAA4AAAASABgAAAAWABIAAAAoACYAAAAMABIAAAAoACYAAAAUABEAAAATABgAAAAOABEAAAATABgAAAAKABEAAAATABgAAAAYABEAAAATABgAAAASAA0AAAAWAAsAAAAQAA0AAAAWAAsAAAARAO7/AAAXABkAAAAYAPb/AAARABYAAAAKAPb/AAARABYAAAAYAPn/AAATABgAAAAKAPn/AAATABgAAAAYAP3/AAARABYAAAAKAP3/AAARABYAAAARAAkAAAAUAA4AAAA=")
 tile_set = SubResource("TileSet_oxhug")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAASAAoAAAAWABgAAAAQAAoAAAAUABgAAAARAAoAAAAVABgAAAATAAcAAAApACEAAAAPAAcAAAApACEAAAAQAAcAAAApACEAAAARAAcAAAApACEAAAASAAcAAAApACEAAAARAAYAAAApACAAAAAQAAYAAAApACAAAAAPAAYAAAApACAAAAASAAYAAAApACAAAAATAAYAAAApACAAAAAOAAYAAAAoACAAAAAOAAcAAAAoACEAAAAUAAYAAAAqACAAAAAUAAcAAAAqACEAAAATAAkAAAA0ACUAAAAPAAkAAAA0ACQAAAATAAgAAAAzACMAAAAPAAgAAAA0ACMAAAATAP//AAApACEAAAASAP//AAApACEAAAARAP//AAApACEAAAAQAP//AAApACEAAAAPAP//AAApACEAAAATAP7/AAApACAAAAASAP7/AAApACAAAAARAP7/AAApACAAAAAQAP7/AAApACAAAAAPAP7/AAApACAAAAAOAP7/AAAoACAAAAAOAP//AAAoACEAAAAUAP7/AAAqACAAAAAUAP//AAAqACEAAAATAPn/AAApACEAAAASAPn/AAApACEAAAAQAPn/AAApACEAAAARAPn/AAApACEAAAAPAPn/AAApACEAAAATAPj/AAApACAAAAASAPj/AAApACAAAAAQAPj/AAApACAAAAARAPj/AAApACAAAAAPAPj/AAApACAAAAAOAPj/AAAoACAAAAAOAPn/AAAoACEAAAAUAPn/AAAqACEAAAAUAPj/AAAqACAAAAATAPv/AAA0ACUAAAATAPr/AAA0ACQAAAAPAPv/AAA0ACQAAAAPAPr/AAA0ACMAAAATAAEAAAA0ACUAAAAPAAAAAAA0ACQAAAATAAAAAAAzACMAAAAPAAEAAAA0ACMAAAA=")
+tile_map_data = PackedByteArray("AAASAAoAAAAWABgAAAAQAAoAAAAUABgAAAARAAoAAAAVABgAAAATAAcAAAApACEAAAAPAAcAAAApACEAAAAQAAcAAAApACEAAAARAAcAAAApACEAAAASAAcAAAApACEAAAARAAYAAAApACAAAAAQAAYAAAApACAAAAAPAAYAAAApACAAAAASAAYAAAApACAAAAATAAYAAAApACAAAAAOAAYAAAAoACAAAAAOAAcAAAAoACEAAAAUAAYAAAAqACAAAAAUAAcAAAAqACEAAAATAAkAAAA0ACUAAAAPAAkAAAA0ACQAAAATAAgAAAAzACMAAAAPAAgAAAA0ACMAAAAUAP7/AAAqACAAAAA=")
 tile_set = SubResource("TileSet_oxhug")
 
 [node name="TileMapLayer8" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAASAAoAAAAWABgAAAAQAAoAAAAUABgAAAARAAoAAAAVABgAAAATAAcAAAA0ACYAAAAQAAcAAAA0ACYAAAARAAcAAAA0ACUAAAASAAcAAAA0ACQAAAAPAAYAAAA1ACUAAAATAAYAAAA1ACUAAAATAAkAAAA0ACUAAAAPAAkAAAA0ACQAAAATAAgAAAAzACMAAAAPAAgAAAA0ACMAAAAUAP7/AAAqACAAAAAUAP//AAAqACEAAAAUAPn/AAAqACEAAAAUAPj/AAAqACAAAAAQAPj/AAA1ACUAAAARAPn/AAA0ACYAAAATAPn/AAA0ACYAAAASAPj/AAA1ACUAAAAPAPn/AAA0ACQAAAASAP//AAA0ACQAAAATAP7/AAA1ACUAAAAPAP7/AAA1ACUAAAAQAP//AAA0ACYAAAARAP//AAA0ACYAAAATAP//AAA0ACYAAAAPAAEAAAA0ACQAAAATAAAAAAA0ACUAAAA=")
+tile_map_data = PackedByteArray("AAASAAoAAAAWABgAAAAQAAoAAAAUABgAAAARAAoAAAAVABgAAAATAAcAAAA0ACYAAAAQAAcAAAA0ACYAAAARAAcAAAA0ACUAAAASAAcAAAA0ACQAAAAPAAYAAAA1ACUAAAATAAYAAAA1ACUAAAATAAkAAAA0ACUAAAAPAAkAAAA0ACQAAAATAAgAAAAzACMAAAAPAAgAAAA0ACMAAAAUAP7/AAAqACAAAAAUAP//AAAqACEAAAAUAPj/AAAqACAAAAA=")
 tile_set = SubResource("TileSet_oxhug")
 
-[node name="player" parent="." instance=ExtResource("2_oxhug")]
+[node name="player" parent="." instance=ExtResource("3_cg0w5")]
 position = Vector2(544, 648)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -445,60 +447,60 @@ offset = Vector2(1, 1)
 zoom = Vector2(3, 3)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_cvhg6")
+stream = ExtResource("4_dys00")
 autoplay = true
 
-[node name="powerup3" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(448, 488)
+[node name="powerup3" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(432, 472)
 
-[node name="powerup4" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(608, 488)
+[node name="powerup4" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(664, 472)
 
-[node name="powerup5" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(736, 400)
+[node name="powerup5" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(736, 344)
 
-[node name="powerup6" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(736, 304)
+[node name="powerup6" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(688, 240)
 
-[node name="powerup7" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(328, 416)
+[node name="powerup7" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(328, 384)
 
-[node name="powerup8" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(360, 336)
+[node name="powerup8" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(328, 280)
 
-[node name="powerup9" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(392, 232)
+[node name="powerup9" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(392, 184)
 
-[node name="powerup10" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup10" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(576, 168)
 
-[node name="powerup11" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup11" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(536, 584)
 
-[node name="powerup12" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup12" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(544, 40)
 
-[node name="powerup13" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup13" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(536, -96)
 
-[node name="powerup14" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup14" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(544, -264)
 
-[node name="powerup15" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(448, 88)
+[node name="powerup15" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(296, 120)
 
-[node name="powerup16" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(624, 88)
+[node name="powerup16" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(784, 120)
 
-[node name="powerup17" parent="." instance=ExtResource("4_ivib3")]
-position = Vector2(696, 608)
+[node name="powerup17" parent="." instance=ExtResource("5_vl2df")]
+position = Vector2(784, 544)
 
-[node name="powerup18" parent="." instance=ExtResource("4_ivib3")]
+[node name="powerup18" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(296, 544)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("6_ocqs2")
+script = ExtResource("6_m1vmw")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = 466.0
@@ -508,18 +510,37 @@ offset_bottom = -274.0
 metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(560, 776, 656, 776, 656, 624, 872, 624, 872, 56, 656, 56, 656, -240, 736, -240, 736, -24, 896, -24, 896, 648, 672, 648, 672, 800, 408, 800, 408, 640, 200, 640, 200, -24, 352, -24, 352, -184, 352, -240, 424, -240, 424, 56, 208, 56, 208, 624, 424, 624, 424, 776)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(520, 448, 520, 400, 488, 400, 488, 384, 456, 384, 456, 368, 456, 352, 424, 352, 424, 304, 440, 304, 440, 320, 456, 320, 456, 296, 496, 296, 496, 344, 592, 344, 592, 296, 624, 296, 624, 320, 648, 320, 648, 304, 656, 304, 656, 368, 624, 368, 624, 400, 616, 384, 592, 384, 592, 400, 560, 400, 560, 448, 584, 448, 584, 432, 600, 448, 616, 448, 616, 432, 648, 432, 648, 400, 672, 400, 672, 280, 640, 280, 640, 248, 440, 248, 440, 280, 408, 280, 408, 400, 440, 400, 440, 432, 464, 432, 464, 448)
+polygon = PackedVector2Array(521, 437, 519, 393, 494, 394, 493, 378, 458, 379, 456, 368, 456, 352, 424, 352, 424, 304, 440, 304, 440, 320, 456, 320, 456, 288, 496, 287, 496, 331, 591, 331, 589, 286, 624, 285, 625, 310, 648, 311, 648, 304, 656, 304, 655, 350, 622, 349, 624, 400, 616, 384, 592, 384, 589, 393, 559, 392, 560, 437, 587, 437, 600, 448, 632, 456, 672, 456, 672, 440, 672, 424, 704, 424, 704, 256, 672, 256, 672, 224, 624, 208, 464, 208, 416, 224, 408, 256, 376, 256, 376, 424, 408, 424, 408, 456, 453, 454)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(568, 152, 608, 152, 608, 168, 664, 168, 664, 152, 712, 152, 712, 184, 752, 184, 744, 216, 784, 216, 784, 472, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 568, 520, 568, 560, 624, 560, 624, 576, 648, 576, 648, 560, 664, 552, 664, 584, 728, 584, 728, 552, 752, 560, 752, 576, 768, 576, 768, 528, 800, 528, 800, 144, 768, 144, 768, 104, 568, 128)
+polygon = PackedVector2Array(566, 145, 607, 143, 607, 156, 664, 158, 662, 143, 712, 145, 712, 170, 750, 176, 746, 204, 784, 204, 784, 472, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 568, 520, 568, 560, 623, 556, 626, 566, 647, 565, 646, 556, 664, 552, 662, 575, 726, 576, 728, 552, 752, 555, 753, 566, 769, 565, 768, 528, 800, 528, 800, 144, 768, 144, 768, 107, 566, 128)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(1120, 8)
+position = Vector2(1118, 9)
 rotation = 3.14101
 scale = Vector2(1.04432, -0.993635)
-polygon = PackedVector2Array(574.615, 144.569, 612.917, 144.545, 612.926, 160.648, 674.21, 160.61, 674.201, 144.508, 720.163, 144.479, 720.181, 176.684, 750.823, 176.666, 743.181, 208.875, 781.487, 216.903, 781.626, 466.492, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 574.826, 522.977, 574.844, 555.182, 628.467, 555.149, 624, 576, 648, 576, 651.448, 555.135, 674.429, 555.121, 674.443, 579.275, 728.066, 579.242, 728.053, 555.088, 752, 560, 751.043, 571.177, 774.024, 571.162, 774.002, 530.906, 800, 528, 800, 144, 768, 144, 768, 104, 574.601, 120.415)
+polygon = PackedVector2Array(576.527, 135.512, 612.915, 136.496, 611.964, 148.573, 666.545, 149.546, 668.453, 136.462, 720.16, 133.411, 717.306, 166.624, 751.777, 164.59, 747.963, 193.778, 781.478, 194.764, 781.626, 466.492, 744, 472, 744, 496, 712, 504, 688, 520, 624, 520, 574.826, 522.977, 574.844, 555.182, 632.295, 549.11, 634.216, 560.18, 647.622, 560.172, 652.404, 550.105, 674.429, 555.121, 674.438, 568.206, 729.019, 568.173, 728.053, 555.088, 747.203, 551.053, 751.038, 560.108, 766.359, 559.092, 769.21, 519.841, 797.935, 517.81, 797.721, 131.351, 768, 144, 768.976, 99.1633, 574.602, 117.398)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(584, -311, 593, -310, 607, -310, 616, -344, 621, -342, 621, -249, 744, -248, 744, -368, 594, -367, 604, -323, 575, -322, 574, -313)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(511, -313, 479, -314, 472, -336, 464, -336, 464, -328, 464, -248, 336, -248, 328, -368, 464, -368, 492, -368, 480, -323, 510, -323)
+
+[node name="gate" parent="." instance=ExtResource("7_0q8ka")]
+position = Vector2(542, 108)
+
+[node name="gate2" parent="." instance=ExtResource("7_0q8ka")]
+position = Vector2(543, 511)
+
+[node name="flower gate" parent="." instance=ExtResource("8_cg0w5")]
+position = Vector2(496, -186)
+
+[node name="flower gate2" parent="." instance=ExtResource("8_cg0w5")]
+position = Vector2(496, 0)
