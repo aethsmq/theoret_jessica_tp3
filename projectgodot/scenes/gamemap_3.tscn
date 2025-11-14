@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cnjss4sgy8nub"]
+[gd_scene load_steps=17 format=4 uid="uid://cnjss4sgy8nub"]
 
 [ext_resource type="Texture2D" uid="uid://d1pjc2wvhabxs" path="res://assets/spritesheets/Tilesets - Sweetheart's Castle.png" id="1_83jyj"]
 [ext_resource type="Texture2D" uid="uid://drcmdbw3x3uxx" path="res://assets/spritesheets/Omori - Tilesets - Sprout Mole Town.png" id="2_0q8ka"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="6_m1vmw"]
 [ext_resource type="PackedScene" uid="uid://dyl6qq88a2ena" path="res://scenes/gate.tscn" id="7_0q8ka"]
 [ext_resource type="PackedScene" uid="uid://c2e0ointnufcq" path="res://scenes/flower_gate.tscn" id="8_cg0w5"]
+[ext_resource type="Script" uid="uid://l5ycdydvjuwi" path="res://scripts/area_2d_3.gd" id="9_dys00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnfup"]
 texture = ExtResource("1_83jyj")
@@ -556,6 +557,7 @@ region_enabled = true
 region_rect = Rect2(440, 1912, 112, 112)
 
 [node name="Area2D3" type="Area2D" parent="Sprite2D"]
+script = ExtResource("9_dys00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D3"]
 position = Vector2(-0.608765, -13.0161)
@@ -575,3 +577,5 @@ scale = Vector2(0.90625, 1.53977)
 texture = ExtResource("1_83jyj")
 region_enabled = true
 region_rect = Rect2(832, 608, 32, 88)
+
+[connection signal="body_entered" from="Sprite2D/Area2D3" to="Sprite2D/Area2D3" method="_on_area_2D_3_body_entered"]

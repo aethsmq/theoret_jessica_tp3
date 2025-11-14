@@ -35,4 +35,3 @@ func _physics_process(delta):
 				anim.play("back")
 
  
- 
