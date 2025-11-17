@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsc7wyaji7200"]
+
+[ext_resource type="Texture2D" uid="uid://rp2o6c7h572q" path="res://assets/spritesheets/Miscellaneous.png" id="1_yk2u2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fttkb"]
+radius = 8.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yk2u2")
+region_enabled = true
+region_rect = Rect2(200, 96, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fttkb")

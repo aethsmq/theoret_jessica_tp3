@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://bl2vk847q8ix1"]
+[gd_scene load_steps=17 format=4 uid="uid://bl2vk847q8ix1"]
 
+[ext_resource type="Script" uid="uid://ccoh1jklkg5gw" path="res://scripts/gamemap_1.gd" id="1_1ktfh"]
 [ext_resource type="Texture2D" uid="uid://bpnptib447tn2" path="res://assets/background/space background.webp" id="2_iwmkq"]
 [ext_resource type="Texture2D" uid="uid://cigpu5rc26yhm" path="res://assets/spritesheets/omorispritesheet background.png" id="3_sktk1"]
 [ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="4_wm00t"]
 [ext_resource type="AudioStream" uid="uid://cg50ue2pqn2s4" path="res://assets/audio/omori ost.wav" id="5_0vwfa"]
 [ext_resource type="Script" uid="uid://dri7736cya1jw" path="res://scripts/audio_stream_player_2d.gd" id="6_3pak0"]
+[ext_resource type="PackedScene" uid="uid://bsc7wyaji7200" path="res://scenes/key.tscn" id="6_iwmkq"]
 [ext_resource type="PackedScene" uid="uid://dic0bjs576scd" path="res://scenes/powerup.tscn" id="7_xjss1"]
-[ext_resource type="Script" uid="uid://br0kcey6hnek7" path="res://scripts/area_2d.gd" id="8_1ktfh"]
+[ext_resource type="Script" uid="uid://dc5bxvg400gtm" path="res://scripts/area_2d.gd" id="8_1ktfh"]
 [ext_resource type="PackedScene" uid="uid://b71vrjpvna53m" path="res://scenes/television.tscn" id="8_7mdys"]
 [ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="9_dg31i"]
 
@@ -653,8 +655,8 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_1bdoo"]
 sources/0 = SubResource("TileSetAtlasSource_aboh2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ktfh"]
-size = Vector2(64, 9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc7sd"]
+size = Vector2(64, 14)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nduwo"]
 texture = ExtResource("3_sktk1")
@@ -1323,6 +1325,7 @@ texture_region_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_nduwo")
 
 [node name="game map" type="Node2D"]
+script = ExtResource("1_1ktfh")
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(576, 320)
@@ -1379,12 +1382,12 @@ texture = ExtResource("3_sktk1")
 region_enabled = true
 region_rect = Rect2(416, 0, 64, 8)
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="porte" type="Area2D" parent="Sprite2D"]
 script = ExtResource("8_1ktfh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_1ktfh")
+[node name="porteouvrable" type="CollisionShape2D" parent="Sprite2D/porte"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_kc7sd")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAaABwAAAAGAAQAAAAZABIAAAAAAAcAAAAtAA8AAAAMAAAAAAApAAwAAAADAAQAAAAiAAsAAAAAAAQAAAAwABEAAAADAAIAAAAoABEAAAAGAAAAAAAjABEAAAAJAAIAAAApABgAAAABAAIAAAAjAB0AAAABAAIAAAAsACIAAAABAAIAAAAbACIAAAABAAIAAAAfABEAAAAJAAAAAAAuABIAAAAFAAQAAAAaACEAAAACAAIAAAAhACEAAAAGAAIAAAAwABcAAAACAAIAAAAnABUAAAAIAAIAAAAgAA4AAAAGAAMAAAAWABgAAAAHAAIAAAAeACQAAAAHAAIAAAAuACQAAAAHAAIAAAAvACIAAAAKAAUAAAAiABYAAAAIAAEAAAApAB0AAAAEAAIAAAAXACAAAAAEAAIAAAAeAB0AAAAEAAIAAAAwABkAAAAEAAIAAAAjABwAAAAEAAIAAAAqABUAAAAEAAIAAAAcABUAAAAEAAoAAAAlABEAAAADAAIAAAAdABEAAAADAAIAAAAkABcAAAAGAAIAAAAhABoAAAAHAAIAAAAtABsAAAAIAAMAAAArABsAAAAHAAMAAAAkACEAAAAIAAEAAAAaABYAAAABAAIAAAAdABQAAAABAAIAAAAlACAAAAAHAAMAAAAmACIAAAAHAAMAAAAjACIAAAAHAAMAAAA=")
@@ -1464,6 +1467,9 @@ position = Vector2(560, 576)
 [node name="powerup15" parent="." instance=ExtResource("7_xjss1")]
 position = Vector2(504, 368)
 
+[node name="key" parent="." instance=ExtResource("6_iwmkq")]
+position = Vector2(760, 496)
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_dg31i")
@@ -1475,4 +1481,5 @@ offset_right = 872.0
 offset_bottom = 175.0
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_area_2D_body_entered"]
+[connection signal="body_entered" from="Sprite2D/porte" to="Sprite2D/porte" method="_on_body_entered"]
+[connection signal="body_entered" from="key" to="." method="_on_key_body_entered"]
