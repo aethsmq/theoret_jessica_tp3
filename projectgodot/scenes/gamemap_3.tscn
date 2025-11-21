@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cnjss4sgy8nub"]
+[gd_scene load_steps=18 format=4 uid="uid://cnjss4sgy8nub"]
 
 [ext_resource type="Texture2D" uid="uid://d1pjc2wvhabxs" path="res://assets/spritesheets/Tilesets - Sweetheart's Castle.png" id="1_83jyj"]
 [ext_resource type="Texture2D" uid="uid://drcmdbw3x3uxx" path="res://assets/spritesheets/Omori - Tilesets - Sprout Mole Town.png" id="2_0q8ka"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyl6qq88a2ena" path="res://scenes/gate.tscn" id="7_0q8ka"]
 [ext_resource type="PackedScene" uid="uid://c2e0ointnufcq" path="res://scenes/flower_gate.tscn" id="8_cg0w5"]
 [ext_resource type="Script" uid="uid://l5ycdydvjuwi" path="res://scripts/area_2d_3.gd" id="9_dys00"]
+[ext_resource type="PackedScene" uid="uid://4foa1rjx0fav" path="res://scenes/cake.tscn" id="10_vl2df"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnfup"]
 texture = ExtResource("1_83jyj")
@@ -502,17 +503,6 @@ position = Vector2(784, 544)
 [node name="powerup18" parent="." instance=ExtResource("5_vl2df")]
 position = Vector2(296, 544)
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("6_m1vmw")
-
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 466.0
-offset_top = -297.0
-offset_right = 506.0
-offset_bottom = -274.0
-metadata/_edit_use_anchors_ = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
 
@@ -576,5 +566,35 @@ scale = Vector2(0.90625, 1.53977)
 texture = ExtResource("1_83jyj")
 region_enabled = true
 region_rect = Rect2(832, 608, 32, 88)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 54.0
+offset_right = 948.0
+offset_bottom = 94.0
+
+[node name="cake" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("10_vl2df")]
+layout_mode = 2
+
+[node name="GameManager" type="Node" parent="CanvasLayer/Control/VBoxContainer"]
+unique_name_in_owner = true
+script = ExtResource("6_m1vmw")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/GameManager"]
+offset_left = 958.0
+offset_top = 35.0
+offset_right = 998.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 40
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Sprite2D/Area2D3" to="Sprite2D/Area2D3" method="_on_area_2D_3_body_entered"]

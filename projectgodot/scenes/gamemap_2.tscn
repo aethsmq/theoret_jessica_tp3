@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxbn3pxck05xu"]
+[gd_scene load_steps=12 format=4 uid="uid://dxbn3pxck05xu"]
 
 [ext_resource type="Texture2D" uid="uid://cj4857rfb3dot" path="res://assets/spritesheets/Tilesets - Vast Forest.png" id="1_e1jk2"]
 [ext_resource type="PackedScene" uid="uid://pwtjv1goq7xo" path="res://scenes/player.tscn" id="2_2gplu"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dvbge2nsxyck0" path="res://assets/audio/OMORI OST - 006 Let's Get Together Now!.mp3" id="3_4dy6r"]
 [ext_resource type="PackedScene" uid="uid://vsb7va1quinu" path="res://scenes/powerup_2.tscn" id="4_wjuch"]
 [ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="5_yxlm0"]
+[ext_resource type="PackedScene" uid="uid://d3glxmsjibl02" path="res://scenes/letters.tscn" id="6_wjuch"]
 
 [sub_resource type="GDScript" id="GDScript_2gplu"]
 script/source = "extends Node2D
@@ -323,15 +324,35 @@ scale = Vector2(1.0625, 1.11538)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PackedVector2Array(-82.8235, 975.452, 52.7059, 961.107, 188.235, 882.211, 353.882, 882.211, 436.706, 832.003, 481.882, 832.003, 489.412, 760.279, 459.294, 745.934, 459.294, 702.899, 429.177, 688.555, 421.647, 674.21, 368.941, 674.21, 368.941, 609.658, 391.529, 602.485, 399.059, 552.278, 429.177, 545.106, 429.177, 444.691, 399.059, 444.691, 399.059, 372.967, 429.177, 372.967, 429.177, 351.45, 459.294, 344.277, 459.294, 243.863, 399.059, 236.691, 399.059, 215.173, 368.941, 208.001, 361.412, 150.621, 286.118, 150.621, 278.588, 129.104, 218.353, 121.932, 203.294, 107.587, 60.2353, 93.2418, 37.647, 14.3449, 37.647, -21.5173, -45.1765, -21.5173, -45.1765, 14.3449, -52.7059, 71.7244, -75.2941, 100.414, -180.706, 100.414, -210.824, 186.484, -233.412, 150.621, -278.588, 150.621, -278.588, 179.311, -308.706, 186.484, -308.706, 215.173, -353.882, 236.691, -368.941, 258.208, -368.941, 372.967, -414.118, 380.14, -549.647, 509.243, -549.647, 588.14, -632.471, 588.14, -632.471, 645.52, -527.059, 745.934, -459.294, 745.934, -459.294, 774.624, -399.059, 774.624, -391.529, 882.211, -323.765, 939.59, -248.471, 961.107, -90.353, 975.452, -376.471, 989.797, -624.941, 774.624, -685.177, 566.623, -579.765, 459.036, -466.824, 315.588, -346.353, 143.449, -112.941, 50.2071, -67.7647, -43.0347, 60.2353, -43.0347, 143.059, 21.5173, 293.647, 78.8969, 421.647, 136.276, 504.471, 344.277, 474.353, 552.278, 542.118, 774.624, 527.059, 867.866, 384, 918.073, 82.8235, 996.97, -82.8235, 1018.49)
 
-[node name="GameManager" type="Node" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 48.0
+offset_right = 971.0
+offset_bottom = 88.0
+theme_override_constants/separation = 50
+
+[node name="letters" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("6_wjuch")]
+layout_mode = 2
+
+[node name="GameManager" type="Node" parent="CanvasLayer/Control/VBoxContainer"]
 unique_name_in_owner = true
 script = ExtResource("5_yxlm0")
 
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 514.0
-offset_top = 87.0
-offset_right = 554.0
-offset_bottom = 110.0
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/GameManager"]
+offset_left = 970.0
+offset_top = 16.0
+offset_right = 1010.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="TileMapLayer/Sprite2D/Area2D2" to="TileMapLayer/Sprite2D/Area2D2" method="_on_area_2D_2_body_entered"]

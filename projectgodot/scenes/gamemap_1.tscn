@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bl2vk847q8ix1"]
+[gd_scene load_steps=18 format=4 uid="uid://bl2vk847q8ix1"]
 
 [ext_resource type="Script" uid="uid://ccoh1jklkg5gw" path="res://scripts/gamemap_1.gd" id="1_1ktfh"]
 [ext_resource type="Texture2D" uid="uid://bpnptib447tn2" path="res://assets/background/space background.webp" id="2_iwmkq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dc5bxvg400gtm" path="res://scripts/area_2d.gd" id="8_1ktfh"]
 [ext_resource type="PackedScene" uid="uid://b71vrjpvna53m" path="res://scenes/television.tscn" id="8_7mdys"]
 [ext_resource type="Script" uid="uid://bxd8f34hd8i4i" path="res://scripts/game_manager.gd" id="9_dg31i"]
+[ext_resource type="PackedScene" uid="uid://hqf28yetks3w" path="res://scenes/present.tscn" id="12_0vwfa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aboh2"]
 texture = ExtResource("3_sktk1")
@@ -1467,18 +1468,41 @@ position = Vector2(560, 576)
 [node name="powerup15" parent="." instance=ExtResource("7_xjss1")]
 position = Vector2(504, 368)
 
-[node name="key" parent="." instance=ExtResource("6_iwmkq")]
-position = Vector2(760, 496)
+[node name="powerup16" parent="." instance=ExtResource("7_xjss1")]
+position = Vector2(712, 576)
 
-[node name="GameManager" type="Node" parent="."]
+[node name="key" parent="." instance=ExtResource("6_iwmkq")]
+position = Vector2(368, 326)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 40.0
+offset_right = 920.0
+offset_bottom = 140.0
+theme_override_constants/separation = 50
+
+[node name="present" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("12_0vwfa")]
+layout_mode = 2
+
+[node name="GameManager" type="Node" parent="CanvasLayer/Control/VBoxContainer"]
 unique_name_in_owner = true
 script = ExtResource("9_dg31i")
 
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 832.0
-offset_top = 152.0
-offset_right = 872.0
-offset_bottom = 175.0
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/GameManager"]
+offset_left = 920.0
+offset_top = 16.0
+offset_right = 960.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Sprite2D/porte" to="Sprite2D/porte" method="_on_body_entered"]

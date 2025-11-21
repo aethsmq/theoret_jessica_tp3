@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch4ie6w584qrc"]
+[gd_scene load_steps=8 format=3 uid="uid://ch4ie6w584qrc"]
 
 [ext_resource type="Script" uid="uid://k5sq7ojd5xn6" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Texture2D" uid="uid://b1vio7lrwp1pp" path="res://assets/background/flowerpot.png" id="2_myx47"]
 [ext_resource type="Texture2D" uid="uid://4w87o3p6vfvx" path="res://assets/background/Aubrey’s dreamlands!.png" id="3_kukqi"]
+[ext_resource type="AudioStream" uid="uid://cnukd1d2v6w7o" path="res://assets/audio/OMORI OST - Lost, Then Found!.mp3" id="4_5d2l8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
 bg_color = Color(1, 1, 1, 1)
@@ -99,6 +100,10 @@ text = "settings"
 position = Vector2(36, -281)
 scale = Vector2(1.13586, 1.26508)
 texture = ExtResource("3_kukqi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5d2l8")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/continuer" to="." method="_on_continuer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
