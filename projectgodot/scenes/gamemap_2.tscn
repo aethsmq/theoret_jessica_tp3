@@ -275,7 +275,7 @@ position = Vector2(592, 712)
 position = Vector2(296, 560)
 
 [node name="powerup4" parent="." instance=ExtResource("4_wjuch")]
-position = Vector2(120, 624)
+position = Vector2(248, 968)
 
 [node name="powerup5" parent="." instance=ExtResource("4_wjuch")]
 position = Vector2(-48, 672)
@@ -299,7 +299,7 @@ position = Vector2(800, 520)
 position = Vector2(424, 656)
 
 [node name="powerup12" parent="." instance=ExtResource("4_wjuch")]
-position = Vector2(816, 432)
+position = Vector2(1056, 336)
 
 [node name="powerup13" parent="." instance=ExtResource("4_wjuch")]
 position = Vector2(520, 504)
